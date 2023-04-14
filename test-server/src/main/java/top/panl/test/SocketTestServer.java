@@ -3,7 +3,7 @@ package top.panl.test;
 import top.panl.rpc.api.HelloService;
 import top.panl.rpc.registry.DefaultServiceRegistry;
 import top.panl.rpc.registry.ServiceRegistry;
-import top.panl.rpc.server.RpcServer;
+import top.panl.rpc.socket.server.SocketServer;
 
 /**
  * ClassName: TestServer
@@ -14,12 +14,12 @@ import top.panl.rpc.server.RpcServer;
  * @Create 2023/3/30 20:16
  * @Version 1.0
  */
-public class TestServer {
+public class SocketTestServer {
     public static void main(String[] args) {
         HelloService helloService = new HelloServiceImpl();
         ServiceRegistry serviceRegistry = new DefaultServiceRegistry();
-        serviceRegistry.registry(helloService);
-        RpcServer rpcServer = new RpcServer(serviceRegistry);
-        rpcServer.start(9000);
+        serviceRegistry.register(helloService);
+        SocketServer socketServer = new SocketServer(serviceRegistry);
+        socketServer.start(9000);
     }
 }

@@ -1,7 +1,8 @@
-package top.panl.rpc.server;
+package top.panl.rpc.socket.server;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import top.panl.rpc.RequestHandler;
 import top.panl.rpc.entity.RpcRequest;
 import top.panl.rpc.entity.RpcResponse;
 import top.panl.rpc.registry.ServiceRegistry;
@@ -13,7 +14,7 @@ import java.net.Socket;
 
 /**
  * ClassName: ResquestHandlerThread
- * Package: top.panl.rpc.server
+ * Package: top.panl.rpc.socket.server
  * Description: 处理RpcRequest的工作线程
  *
  * @Author liupan

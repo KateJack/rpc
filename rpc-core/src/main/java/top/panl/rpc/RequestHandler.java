@@ -1,4 +1,4 @@
-package top.panl.rpc.server;
+package top.panl.rpc;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -12,7 +12,7 @@ import java.lang.reflect.Method;
 
 /**
  * ClassName: ResquestHandler
- * Package: top.panl.rpc.server
+ * Package: top.panl.rpc.socket.server
  * Description: 实际进行过程调用的工作线程
  * 进行过程调用的处理器
  *

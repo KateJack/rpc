@@ -1,7 +1,8 @@
-package top.panl.rpc.client;
+package top.panl.rpc.socket.client;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import top.panl.rpc.RpcClient;
 import top.panl.rpc.entity.RpcRequest;
 
 import java.io.IOException;
@@ -11,18 +12,27 @@ import java.net.Socket;
 
 /**
  * ClassName: RpcClient
- * Package: top.panl.rpc.client
- * Description: 远程方法调用的消费者（客户端）
+ * Package: top.panl.rpc.socket.client
+ * Description: Socket方式远程方法调用的消费者（客户端）
  *
  * @Author liupan
  * @Create 2023/3/30 19:20
  * @Version 1.0
  */
-public class RpcClient {
+public class SocketClient implements RpcClient {
 
-    private static final Logger logger = LoggerFactory.getLogger(RpcClient.class);
+    private static final Logger logger = LoggerFactory.getLogger(SocketClient.class);
 
-    public Object sendRequest(RpcRequest rpcRequest, String host, int port) {
+    private final String host;
+    private final int port;
+
+    public SocketClient(String host, int port) {
+        this.host = host;
+        this.port = port;
+    }
+
+    @Override
+    public Object sendRequest(RpcRequest rpcRequest) {
         try(Socket socket = new Socket(host,port)) {
             ObjectOutputStream objectOutputStream = new ObjectOutputStream(socket.getOutputStream());
             ObjectInputStream objectInputStream = new ObjectInputStream(socket.getInputStream());

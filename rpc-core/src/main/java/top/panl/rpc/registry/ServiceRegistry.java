@@ -15,7 +15,7 @@ public interface ServiceRegistry {
      * @param service  将注册的服务实体
      * @param <T> 服务实体类
      */
-    <T> void registry(T service);
+    <T> void register(T service);
 
     /**
      * 根据服务名称获取服务实体

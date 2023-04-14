@@ -1,6 +1,7 @@
 package top.panl.rpc.entity;
 
-import lombok.Builder;
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
 import lombok.Data;
 
 import java.io.Serializable;
@@ -15,8 +16,10 @@ import java.io.Serializable;
  * @Version 1.0
  */
 @Data
-@Builder
+@AllArgsConstructor
 public class RpcRequest implements Serializable {
+
+    public RpcRequest() {}
 
     /**
      * 待调用接口名称
@@ -37,4 +40,6 @@ public class RpcRequest implements Serializable {
      * 调用方法的参数类型
      */
     private Class<?>[] paramTypes;
+
+
 }

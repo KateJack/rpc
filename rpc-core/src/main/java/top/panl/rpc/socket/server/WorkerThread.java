@@ -1,4 +1,4 @@
-package top.panl.rpc.server;
+package top.panl.rpc.socket.server;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -14,7 +14,7 @@ import java.net.Socket;
 
 /**
  * ClassName: WorkThread
- * Package: top.panl.rpc.server
+ * Package: top.panl.rpc.socket.server
  * Description: 实际进行过程调用的工作线程
  *
  * @Author liupan
